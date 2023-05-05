@@ -1,8 +1,4 @@
 "use strict";
-// abstract class baseObject = { 
-// 	width: 0, 
-// 	length: 0 
-// }; 
 class baseObject {
     constructor() {
         this.width = 0;
