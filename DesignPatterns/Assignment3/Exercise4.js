@@ -11,6 +11,6 @@ const fibonacci = function(n, memo = new Map()) {
 };
 
 console.time('memoriziation method start time');
-console.log(fibonacci(15));
+console.log(fibonacci(100));
 console.timeEnd('memoriziation method End');
 
