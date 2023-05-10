@@ -6,7 +6,7 @@ class Regular{
 }
 
 class Energy{
-    constructor(color){
+    constructor(){
         this.color='red';
     }
 
