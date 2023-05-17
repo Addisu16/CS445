@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .image11,.image22{
+        width:90px;
+        height:90px;
+    }
+</style>
+
+<body>
+    
+<div>
+<img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg" alt="flowerImage1" id="image1" class="image11">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg/1126px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg" alt="flowerImage2" id="image2" class="image22">
+</div>
+<button id="swap">
+Swap
+</button>
+
+<script>
+   
+    let image1=document.getElementById('image1');
+    let image2=document.getElementById('image2');
+    
+document.getElementById('swap').onclick=function(){
+    let temp=image1.src;
+    image1.src=image2.src;
+    image2.src=temp;
+   
+}
+</script>
+
+    
+</body>
+</html>
