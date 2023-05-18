@@ -5,7 +5,7 @@ Array.prototype.removeDuplicatesAsync=async function(){
             resolve(newArr);
         }, 0);
     })
-    .catch(error=>{console.log(error)});
+    .catch(error=>console.log(error));
 console.log(newArr);
 
 };
