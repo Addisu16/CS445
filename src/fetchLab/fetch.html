@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+    window.onload = function () {
+    requestFetch();
+    document.getElementById('refresh').onclick = requestFetch;
+}
+function requestFetch() {
+  fetch('https://randomuser.me/api/?results=5')
+    .then(response => response.json())
+    .then(data => {
+      const users = data.results;
+      console.log(users);
+      findUser(users);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+function findUser(users) {
+  for (let i = 0; i < users.length; i++) {
+    let employee = users[i];
+    document.getElementById('image' + (i + 1)).src = employee.picture.large;
+    document.getElementById('person-name-' + (i + 1)).textContent = employee.name.first + " " + employee.name.last;
+    document.getElementById('gender' + (i + 1)).textContent = "Gender: " + employee.gender;
+    document.getElementById("email" + (i + 1)).textContent = employee.email;
+  }
+}
+
+</script>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <h1 style="text-align: center;">Employee list</h1>
+        <div class="row" style=" display:flex; justify-content: space-between; ">
+            <div class="col-4">
+                <img id="image1" src="" />
+
+            </div>
+            <div class="col=8 text-end">
+                <p id="person-name-1" style="font-weight: bold;">Lili Nahome</p>
+                <p id="gender1"></p>
+                <p id="email1"></p>
+
+            </div>
+
+
+        </div>
+        <hr>
+        <div id="">
+
+        </div>
+        <div class="row" style=" display:flex; justify-content: space-between; ">
+            <div class="col-4">
+                <img id="image2" src="" />
+
+            </div>
+            <div class="col=8 text-end">
+                <p id="person-name-2" style="font-weight: bold;">Lili Nahome</p>
+                <p id="gender2">Phone:223-233-2323</p>
+                <p id="email2">example@yahoo.edu</p>
+
+            </div>
+
+        </div>
+        <hr>
+        <div class="row" style=" display:flex; justify-content: space-between; ">
+            <div class="col-4">
+                <img id="image3" src="" />
+
+            </div>
+            <div class="col=8 text-end">
+                <p id="person-name-3" style="font-weight: bold;">Lili Nahome</p>
+                <p id="gender3"></p>
+                <p id="email3"></p>
+
+
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="row" style=" display:flex; justify-content: space-between; ">
+            <div class="col-4">
+                <img id="image4" src="" />
+            </div>
+            <div class="col=8 text-end">
+                <p id="person-name-4" style="font-weight: bold;">Lili Nahome</p>
+                <p id="gender4"></p>
+                <p id="email4"></p>
+
+            </div>
+
+        </div>
+        <hr>
+        <div class="row" style=" display:flex; justify-content: space-between; ">
+            <div class="col-4">
+                <img id="image5" src="" />
+
+            </div>
+            <div class="col=8 text-end">
+                <p id="person-name-5" style="font-weight: bold;">Lili Nahome</p>
+                <p id="gender5"></p>
+                <p id="email5"></p>
+
+            </div>
+
+
+        </div>
+    </div>
+    <button id="refresh" style="margin-left:700px">Refresh</button>
+</body>
+</html>
+
